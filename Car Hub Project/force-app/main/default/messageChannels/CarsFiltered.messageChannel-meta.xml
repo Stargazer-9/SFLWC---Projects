@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metdata">
+    <description>This event is fired when cars filter change.</description>
+    <isExposed>false</isExposed>    <!-- set to true when exposing to Aura component or visual force page -->
+    <lightningMessageFields>
+        <description>Current car filters</description>
+        <fieldName>filters</fieldName>
+    </lightningMessageFields>
+    <masterLabel>CarsFiltered</masterLabel>
+</LightningMessageChannel>
