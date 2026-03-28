@@ -1,0 +1,41 @@
+Salesforce --> Credit Check API
+Customer Record Page -> Button (Fetch Credit Score) -> When we click on this button it will make a callout and fetch the credit score of the following customer
+
+
+OUTLINE:
+1) A Custom Record Page (Lightning App Builder).
+
+2) A Button (“Fetch Credit Score”).
+
+3) An Apex class that does the callout to your external API.
+
+4) A Lightning Component/Screen Flow that calls the Apex and shows the result. (can prefer Quick Action instead of an LWC button)
+
+
+
+📝 Step-by-Step
+1️⃣ Prepare Your External API - Make sure your mock banking API is deployed and publicly accessible (e.g., on Railway): https://your-app-name.up.railway.app/getCreditScore
+2️⃣ Create a Named Credential (Best Practice)
+	This stores the endpoint securely.
+	Go to Setup → Named Credentials.
+	Click New.
+	Give it a Label like Mock_Bank_API.
+	URL = https://your-app-name.up.railway.app (no endpoint yet).
+	Leave auth as “No Authentication” (or add auth later if needed).
+	Save.
+	This gives you a secure reference for your Apex callout.
+3️⃣ Create the Apex Callout Class
+4️⃣ Create a Lightning Web Component (LWC) for the Button 
+	creditScoreButton.html
+	creditScoreButton.js
+	creditScoreButton.js-meta.xml
+5️⃣ Add LWC to the Custom Record Page
+	Go to Setup → Object Manager → (Your Object).
+	Click Lightning Record Pages → New.
+	Choose a template and create the page.
+	In the Lightning App Builder, drag your creditScoreButton component onto the page.
+	Save and Activate.
+6️⃣ Test
+	Open a record.
+	Click “Fetch Credit Score”.
+	It should call your external API via Apex and display the credit score.
